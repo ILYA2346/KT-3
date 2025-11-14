@@ -14,70 +14,96 @@
 }
 
 
-h1{
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a1c, #ff7e00);
+}
+
+.container {
+    display: grid;
+    gap: 20px; 
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+h1 {
     font-weight: 700;
     font-size: 3.75rem;
     line-height: 1.1;
     color: #f1c50e !important;
     font-family: Oswald, sans-serif;
+    margin-bottom: 20px;
 }
-p{
+
+p {
     font-family: 'Open Sans Italic';
+    margin-bottom: 20px;
 }
-a{
+
+a {
     font-family: 'Open Sans';
     border-bottom: #f1c50e 2.5px solid;
     padding-bottom: 3px;
+    display: inline-block;
+    text-decoration: none;
+    color: #f1c50e;
 }
 
-
-
+/* Адаптивная сетка */
 @media (min-width: 1024px) {
-    .container{
+    .container {
         margin: 100px;
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
-        grid-template-rows: 45% 45%;
-        gap: 0px 5%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 1024px) {
-    .container{
+    .container {
         margin: 80px;
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
-        grid-template-rows: 45% 45%;
-        gap: 0px 5%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .container{
-        display: grid;
-        grid-template-columns: 45% 45%;
-        grid-template-rows: 35% 35% 35%;
-        gap: 0px 10%;
+    .container {
         margin: 50px;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 425px) {
-    .container{
-        display: grid;
-        grid-template-columns: 45% 45%;
-        grid-template-rows: 35% 35% 35%;
-        gap: 0px 10%;
+    .container {
         margin: 30px;
+        grid-template-columns: 1fr;
+    }
+    .card  {
+        text-align: justify;
     }
 }
 
 @media (max-width: 320px) {
-    .container{
-        display: grid;
+    .container {
         margin: 10px;
-        grid-template-columns: 45% 45%;
-        grid-template-rows: 35% 35% 35%;
-        gap: 0px 10%;
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 14px;
     }
 }
